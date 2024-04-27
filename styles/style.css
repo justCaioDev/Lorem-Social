@@ -1,0 +1,421 @@
+:root {
+    --main-bg-color: #0D0D0D;
+    --primary-color: #737373;
+    --highlight-color: #F229AC;
+    --main-text-color: #ebebeb;
+}
+
+@keyframes rotate {
+    100% {
+        rotate: 360deg;
+    }
+}
+@keyframes norotate {
+    100% {
+        rotate: -360deg;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: 'Inter', sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.content-container {
+    position: relative;
+    width: 1200px;
+
+    margin: auto;
+    /* border: 2px solid white; */
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+    margin-bottom: 40px;
+}
+
+header .header-cadastro {
+    width: 140px;
+    height: 40px;
+
+    color: var(--main-text-color);
+    text-align: center;
+    font-size: 16px;
+    
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+    background-color: transparent;
+    cursor: pointer;
+    transition: border .6s;
+}
+
+.header-cadastro:hover {
+    border: 2px solid var(--highlight-color);
+}
+
+main .bg-main {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../assets/bg-main.png);
+    background-size: cover;
+    animation: rotate 10s ease-in-out alternate infinite;
+    border-radius: 50%;
+    transition: box-shadow 1.5s ease-in-out;
+}
+
+/* .bg-main img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    animation: rotate 10s ease-in-out alternate infinite;
+    border-radius: 50%;
+    transition: box-shadow 1.5s ease-in-out;
+} */
+
+.bg-main:hover {
+    border-radius: 50%;
+    box-shadow: 0 0 5px 1px  var(--highlight-color);
+}
+
+main .main-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    /* animation: norotate 10s ease-in-out alternate infinite; */
+}
+
+.main-content .criar-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    margin: 25px auto;
+
+    color: var(--main-text-color);
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 15px;
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+    pointer-events: all;
+    overflow: hidden;
+    transition: background-color .9s ease-in-out;
+}
+
+.criar-btn::before {
+    position: absolute;
+    content: '';
+    width: 240px;
+    height: 30px;
+    box-shadow: 0 0 5px 1px var(--highlight-color);
+    background-color: var(--highlight-color);
+    animation: rotate 8.5s ease-in-out infinite;
+}
+
+.criar-btn::after {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: 'Criar uma conta';
+    color: var(--main-text-color);
+    background-color: black;
+    inset: 3px;
+    border-radius: inherit;
+}
+
+.criar-btn:hover {
+    background-color: var(--highlight-color);
+}
+
+main .main-title {
+    font-size: 40px;
+    text-align: center;
+}
+
+main .main-description {
+    width: 1200px;
+    margin: 35px 0;
+    font-size: 18px;
+    text-align: center;
+    text-justify: justify;
+}
+
+span {
+    color: var(--highlight-color);
+    font-weight: 800;
+}
+
+a {
+    text-decoration: none;
+    color: var(--highlight-color);
+    font-weight: 800;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all .7s;
+}
+
+a:hover {
+    color: #fe52c2;
+    border-bottom: 1px solid #fe52c2
+
+}
+
+.main-content .login {
+    margin: auto;
+    padding: 50px 0 0 0;
+}
+
+.modal-cadastro {
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    
+    width: 400px;
+    height: 550px;
+    background-color: var(--main-bg-color);
+    border-radius: 10px;
+    border: 2px solid var(--main-text-color);
+    box-shadow: 0 0 80px 30px black;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.modal-login {
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform: translate(-50%, -50%);
+    
+    width: 400px;
+    height: 550px;
+    background-color: var(--main-bg-color);
+    border-radius: 10px;
+    border: 2px solid var(--main-text-color);
+    box-shadow: 0 0 80px 30px black;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.modal-login .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.modal-login .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    color: var(--main-bg-color);
+    background-color: var(--main-text-color);
+    border: 4px solid var(--main-text-color);
+}
+
+.modal-cadastro .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    color: var(--main-bg-color);
+    background-color: var(--main-text-color);
+    border: 4px solid var(--main-text-color);
+}
+
+.modal-cadastro .modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 95%;
+}
+
+.toast {
+    position: fixed;
+    right: 50px;
+    bottom: 0px;
+    opacity: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 50px;
+    padding: 10px;
+    background-color: var(--highlight-color);
+    color: var(--main-bg-color);
+    border-radius: 5px 5px 0 0;
+    font-weight: 600;  
+    z-index: 3;
+}
+
+.anim {
+    animation: toast 5s ease-in-out;
+}
+
+@keyframes toast {
+    0% {
+        opacity: 0;
+        bottom: 0;
+    }
+    25% {
+        opacity: 1;
+        bottom: 50px
+    }
+    75% {
+        opacity: 1;
+        bottom: 50px;
+    }
+
+    100% {
+        opacity: 0;
+        bottom: 0px;
+    }
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: var(--main-text-color);
+    color: var(--main-bg-color);
+    font-weight: 600;
+    font-size: 16px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+}
+
+.criar-conta-btn, .logar-conta-btn {
+    width: 80%;
+    height: 60px;
+    margin: 100px auto 0;
+
+    border: none;
+    background-color: var(--main-text-color);
+    font-weight: 700;
+    font-size: 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+.criar-conta-btn:hover, .logar-conta-btn:hover {
+    background-color: #bbbbbb;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border-radius: 0 5px 5px 0;
+    border: 2px solid var(--main-text-color);
+    padding: 0 10px;
+}
+
+input:focus {
+    scale: 100%;
+    border: none;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media screen and (max-width: 680px) {
+    .header-cadastro {
+        display: none;
+    }
+
+    .header-title {
+        font-size: 18px;
+    }
+
+    main .bg-main {
+        width: 300px;
+        height: 300px;
+    }
+
+
+    main .main-content {
+        width: 90%;
+        margin: 160px auto;
+        gap: 25px;
+    }
+
+    main .main-description {
+        width: 90%;
+        margin: auto;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    main .main-title {
+        font-size: 28px;
+    }
+
+    .main-content .criar-btn {
+        margin: 45px auto 0;
+    }
+
+    .content-container {
+        width: 90%;
+    }
+
+    .modal-cadastro, .modal-login {
+        width: 95%;
+        margin-top: 120px;
+    }
+}

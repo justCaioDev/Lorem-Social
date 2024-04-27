@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Social</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="content-container">
+        <header>
+            <h1 class="header-title">Lorem Social</h1>
+            <button class="header-cadastro">Cadastre-se</button>
+        </header>
+        <main>
+            <section class="main-content">
+                <h2 class="main-title">Lorem <span>Social</span></h2>
+                <p class="main-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere deserunt est, cumque nemo dolores similique commodi eaque non dolore nihil mollitia impedit tempore consectetur cum sint, ducimus aspernatur! Nostrum maiores, itaque nobis dicta eum repellat ab eaque, sint laborum quae a quos, rem culpa eos molestiae totam praesentium. Totam, nemo!</p>
+                <button class="criar-btn">Criar uma conta</button>
+                <p class="login">Já possui uma conta? <br> Faça <a href="#" class="btn-login">login</a> na Lorem Social</p>
+            </section>
+            <div class="bg-main">
+            </div>
+        </main>
+        <section class="modal-cadastro hidden"> 
+            <header class="modal-header">
+                <h2>Cadastre-se</h2>
+                <a href="#" class="close-modal-cadastro">X</a>
+            </header> 
+            <div class="modal-content">
+                    <div class="email inputs">
+                        <label for="email">Email<span>*</span></label>
+                        <input type="email" name="email" id="email-cadastro" placeholder="Email_ficticio@gmail.com" required>
+                    </div>
+                    <div class="user inputs">
+                        <label for="user">Usuário<span>*</span></label>
+                        <input type="text" name="user" id="user-cadastro" placeholder="Nome de usuário" required>
+                    </div>
+                    <div class="senha inputs">
+                        <label for="senha">Senha<span>*</span></label>
+                        <input type="password" name="senha" id="senha-cadastro" placeholder="Informe uma senha" required>
+                    </div>
+                    <div class="celular inputs">
+                        <label for="cell"T>Celular</label>
+                        <input type="tel" name="cell" id="cell-cadastro" placeholder="0000-0000" maxlength="9">
+                    </div>
+                    <button class="criar-conta-btn">Criar conta</button>
+            </div>
+        </section>
+        <section class="modal-login hidden"> 
+            <header class="modal-header">
+                <h2>Login</h2>
+                <a href="#" class="close-modal-login">X</a>
+            </header> 
+            <div class="modal-content">
+                    <div class="user inputs">
+                        <label for="user">Usuário</label>
+                        <input type="text" name="user" id="user-login" placeholder="Nome de usuário" required>
+                    </div>
+                    <div class="senha inputs">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha-login" placeholder="Informe uma senha" required>
+                    </div>
+                    
+                    <button class="logar-conta-btn">Fazer login</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <div class="toast">
+        <p class="toast-content">Conta criada com sucesso!</p>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

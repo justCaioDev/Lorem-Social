@@ -13,11 +13,6 @@ const btn_Logar = document.querySelector('.logar-conta-btn')
 const toast = document.querySelector('.toast')
 const toastContent = document.querySelector('.toast-content')
 
-// localStorage.email = 'adm_email'
-// localStorage.user = 'adm_user'
-// localStorage.senha = 'adm_senha'
-// localStorage.cell = 'adm_cell'
-
 function Cadastrar() {
     const email_Cadastro = document.querySelector('#email-cadastro')
     const user_Cadastro = document.querySelector('#user-cadastro')
@@ -43,11 +38,6 @@ function Cadastrar() {
         localStorage.user = user
         localStorage.senha = senha
         localStorage.cell = cell
-
-        console.log('EMAIL: ' + localStorage.email)
-        console.log('USER: ' + localStorage.user)
-        console.log('SENHA: ' + localStorage.senha)
-        console.log('CELL: ' + localStorage.cell)
 
         toast.classList.add('anim')
         toastContent.textContent = 'Conta criada com sucesso!'
